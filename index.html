@@ -103,7 +103,7 @@
     }
 
     /* --- ESTILOS DE BOTONES CON EFECTO FLOTANTE --- */
-    .btn-comprar, .btn-cancelar, .btn-extra, .plan a {
+    .btn-comprar, .btn-extra, .plan a {
       display: block;
       font-weight: bold;
       padding: 14px;
@@ -128,17 +128,36 @@
     /* --- FIN ESTILOS DE BOTONES CON EFECTO FLOTANTE --- */
 
 
-    .btn-comprar { background: linear-gradient(90deg, #9d4dff, #ffea00); }
-    .btn-cancelar { background: linear-gradient(90deg, #ff0044, #ff8000); }
+    /* Color Verde Neón (Estado por defecto) */
+    .btn-comprar { background: linear-gradient(90deg, #39FF14, #00FFC0); }
+    
+    /* === NUEVO === Color Rojo Neón (Estado Activo/Cerrar) */
+    .btn-comprar.activo { 
+        background: linear-gradient(90deg, #ff0044, #ff8000); 
+        animation: none; /* Detiene el flotar cuando está activo */
+    }
+    
     .btn-extra { background: linear-gradient(90deg, #ffea00, #9d4dff); }
     .btn-extra.otro { background: linear-gradient(90deg, #00bcd4, #9d4dff); }
-    .plan a { background: linear-gradient(90deg, #ffea00, #9d4dff); padding: 8px 14px; border-radius: 8px; }
+    
+    /* Color Verde Neón para botones de compra de plan */
+    .plan a { background: linear-gradient(90deg, #39FF14, #00FFC0); padding: 8px 14px; border-radius: 8px; }
+
     /* Ajustar el hover para que la animación se detenga y se enfoque */
-    .btn-comprar:hover, .btn-cancelar:hover, .btn-extra:hover, .plan a:hover {
+    .btn-comprar:hover, .btn-extra:hover, .plan a:hover {
       transform: scale(1.05);
       box-shadow: 0 0 25px #fff700, 0 0 40px #9d4dff;
       animation: none; /* Detiene el flotar al pasar el mouse */
     }
+    
+    /* === NUEVO === Ajuste de hover específico para cada estado del botón */
+    .btn-comprar:not(.activo):hover, .plan a:hover {
+        box-shadow: 0 0 25px #39FF14, 0 0 40px #00FFC0;
+    }
+    .btn-comprar.activo:hover {
+        box-shadow: 0 0 25px #ff0044, 0 0 40px #ff8000;
+    }
+
 
     .planes { display: none; margin-top: 15px; }
 
@@ -187,7 +206,6 @@
       <div class="plan"><span>7 Días</span> <strong>USD 7.50</strong><a data-amount="7.50" href="#">Comprar vía PayPal</a></div>
       <div class="plan"><span>15 Días</span> <strong>USD 15.50</strong><a data-amount="15.50" href="#">Comprar vía PayPal</a></div>
       <div class="plan"><span>30 Días</span> <strong>USD 25.50</strong><a data-amount="25.50" href="#">Comprar vía PayPal</a></div>
-      <div class="btn-cancelar">Cerrar</div>
       <div class="btn-extra btn-pago">📱 Ya pague</div>
       <div class="btn-extra btn-otro">💸 Otro método de pago</div>
     </div>
@@ -204,7 +222,6 @@
       <div class="plan"><span>7 Días</span> <strong>USD 10.50</strong><a data-amount="10.50" href="#">Comprar vía PayPal</a></div>
       <div class="plan"><span>15 Días</span> <strong>USD 15.50</strong><a data-amount="15.50" href="#">Comprar vía PayPal</a></div>
       <div class="plan"><span>30 Días</span> <strong>USD 20.50</strong><a data-amount="20.50" href="#">Comprar vía PayPal</a></div>
-      <div class="btn-cancelar">Cerrar</div>
       <div class="btn-extra btn-pago">📱 Ya pague</div>
       <div class="btn-extra btn-otro">💸 Otro método de pago</div>
     </div>
@@ -221,7 +238,6 @@
       <div class="plan"><span>7 Días</span> <strong>USD 10.50</strong><a data-amount="10.50" href="#">Comprar vía PayPal</a></div>
       <div class="plan"><span>15 Días</span> <strong>USD 15.50</strong><a data-amount="15.50" href="#">Comprar vía PayPal</a></div>
       <div class="plan"><span>30 Días</span> <strong>USD 25.50</strong><a data-amount="25.50" href="#">Comprar vía PayPal</a></div>
-      <div class="btn-cancelar">Cerrar</div>
       <div class="btn-extra btn-pago">📱 Ya pague</div>
       <div class="btn-extra btn-otro">💸 Otro método de pago</div>
     </div>
@@ -238,7 +254,6 @@
       <div class="plan"><span>7 Días</span> <strong>USD 10.50</strong><a data-amount="10.50" href="#">Comprar vía PayPal</a></div>
       <div class="plan"><span>15 Días</span> <strong>USD 15.50</strong><a data-amount="15.50" href="#">Comprar vía PayPal</a></div>
       <div class="plan"><span>30 Días</span> <strong>USD 25.50</strong><a data-amount="25.50" href="#">Comprar vía PayPal</a></div>
-      <div class="btn-cancelar">Cerrar</div>
       <div class="btn-extra btn-pago">📱 Ya pague</div>
       <div class="btn-extra btn-otro">💸 Otro método de pago</div>
     </div>
@@ -255,7 +270,6 @@
       <div class="plan"><span>7 Días</span> <strong>USD 15.50</strong><a data-amount="15.50" href="#">Comprar vía PayPal</a></div>
       <div class="plan"><span>15 Días</span> <strong>USD 25.50</strong><a data-amount="25.50" href="#">Comprar vía PayPal</a></div>
       <div class="plan"><span>30 Días</span> <strong>USD 45.50</strong><a data-amount="45.50" href="#">Comprar vía PayPal</a></div>
-      <div class="btn-cancelar">Cerrar</div>
       <div class="btn-extra btn-pago">📱 Ya pague</div>
       <div class="btn-extra btn-otro">💸 Otro método de pago</div>
     </div>
@@ -272,7 +286,6 @@
     <div class="btn-comprar" data-prod="prod6" data-planes="planes6">Ver Opciones</div>
     <div class="planes" id="planes6">
       <div class="plan"><span>1 Año</span> <strong>USD 10.00</strong><a data-amount="10.00" href="#">Comprar vía PayPal</a></div>
-      <div class="btn-cancelar">Cerrar</div>
       <div class="btn-extra btn-pago">📱 Ya pague</div>
       <div class="btn-extra btn-otro">💸 Otro método de pago</div>
     </div>
@@ -285,26 +298,50 @@
     // Número de WhatsApp
     const whatsappNumber = "51977693275"; 
     
-    document.querySelectorAll('.btn-comprar').forEach(btn => {
+    // === SCRIPT DE BOTÓN MODIFICADO ===
+    const allComprarBtns = document.querySelectorAll('.btn-comprar');
+    const allProductos = document.querySelectorAll('.producto');
+    const allPlanes = document.querySelectorAll('.planes');
+
+    allComprarBtns.forEach(btn => {
       btn.addEventListener('click', (e)=>{
         e.stopPropagation();
+
+        // Obtener elementos para ESTE botón
         const prodId = btn.dataset.prod;
         const planesId = btn.dataset.planes;
-        document.querySelectorAll('.producto').forEach(p=>p.classList.remove('seleccionado'));
-        document.querySelectorAll('.planes').forEach(p=>p.style.display='none');
-        document.getElementById(prodId).classList.add('seleccionado');
-        document.getElementById(planesId).style.display='block';
-      });
-    });
+        const currentProd = document.getElementById(prodId);
+        const currentPlanes = document.getElementById(planesId);
 
-    document.querySelectorAll('.btn-cancelar').forEach(btn=>{
-      btn.addEventListener('click', e=>{
-        e.stopPropagation();
-        const planes = btn.closest('.planes');
-        planes.style.display='none';
-        planes.parentElement.classList.remove('seleccionado');
+        // Comprobar si ya estaba abierto
+        const wasOpen = currentProd.classList.contains('seleccionado');
+
+        // --- 1. Resetear todo ---
+        // Quitar 'seleccionado' de todos los productos
+        allProductos.forEach(p => p.classList.remove('seleccionado'));
+        // Ocultar todos los paneles de planes
+        allPlanes.forEach(p => p.style.display = 'none');
+        // Resetear todos los botones a su estado original
+        allComprarBtns.forEach(b => {
+            b.innerText = 'Ver Opciones';
+            b.classList.remove('activo');
+        });
+
+        // --- 2. Abrir el actual (si no estaba ya abierto) ---
+        if (!wasOpen) {
+          currentProd.classList.add('seleccionado');
+          currentPlanes.style.display = 'block';
+          btn.innerText = 'Cerrar';
+          btn.classList.add('activo');
+        }
+        // Si estaba abierto, el bucle de reseteo ya se encargó de cerrarlo.
       });
     });
+    // ===================================
+
+
+    // --- SCRIPT DE BTN-CANCELAR ELIMINADO ---
+
 
     document.querySelectorAll('.plan a').forEach(link=>{
       link.addEventListener('click', e=>{
@@ -337,6 +374,7 @@
   </script>
 
   <script>
+    // --- SCRIPT DE PARTÍCULAS (SIN CAMBIOS) ---
     const canvas = document.getElementById("fondo");
     const ctx = canvas.getContext("2d");
     canvas.width = window.innerWidth;
