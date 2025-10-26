@@ -12,7 +12,6 @@
       left: 0;
       z-index: -1;
     }
-
     body {
       margin: 0;
       padding: 20px;
@@ -116,25 +115,29 @@
       color: #fff;
       transition: 0.2s;
       box-shadow: 0 0 10px #9d4dff;
+      /* Aplicar la animación de flotar a todos los botones */
       animation: flotar 3s ease-in-out infinite;
     }
 
+    /* Definición del efecto de flotar */
     @keyframes flotar {
       0% { transform: translateY(0px); }
       50% { transform: translateY(-3px); }
       100% { transform: translateY(0px); }
     }
+    /* --- FIN ESTILOS DE BOTONES CON EFECTO FLOTANTE --- */
+
 
     .btn-comprar { background: linear-gradient(90deg, #9d4dff, #ffea00); }
     .btn-cancelar { background: linear-gradient(90deg, #ff0044, #ff8000); }
     .btn-extra { background: linear-gradient(90deg, #ffea00, #9d4dff); }
     .btn-extra.otro { background: linear-gradient(90deg, #00bcd4, #9d4dff); }
     .plan a { background: linear-gradient(90deg, #ffea00, #9d4dff); padding: 8px 14px; border-radius: 8px; }
-
+    /* Ajustar el hover para que la animación se detenga y se enfoque */
     .btn-comprar:hover, .btn-cancelar:hover, .btn-extra:hover, .plan a:hover {
       transform: scale(1.05);
       box-shadow: 0 0 25px #fff700, 0 0 40px #9d4dff;
-      animation: none;
+      animation: none; /* Detiene el flotar al pasar el mouse */
     }
 
     .planes { display: none; margin-top: 15px; }
@@ -162,8 +165,7 @@
       text-shadow: 0 0 10px #9d4dff;
     }
 
-    #prod1.seleccionado, #prod2.seleccionado, #prod3.seleccionado,
-    #prod4.seleccionado, #prod5.seleccionado, #prod6.seleccionado {
+    #prod1.seleccionado, #prod2.seleccionado, #prod3.seleccionado, #prod4.seleccionado, #prod5.seleccionado, #prod6.seleccionado {
       border: 2px solid #ffea00;
       box-shadow: 0 0 25px #ffea00, 0 0 40px #9d4dff;
     }
@@ -174,86 +176,166 @@
 
   <h1>𝐀𝐑𝐈𝐀𝐍 | 𝐕𝐄𝐍𝐓𝐀𝐒</h1>
 
-  <!-- ✅ Tus productos -->
-  <!-- (Drip, BR Mods, Cuban, HG Cheats, Flourite IOS, Gbox) -->
-  <!-- Mantiene toda la estructura original y funcional -->
-  <!-- ... -->
-  <!-- ⚠️ No se eliminó ni alteró nada de tus productos -->
-  <!-- ... -->
+  <div class="producto" id="prod1">
+    <div class="titulo">Drip Client Mobile</div>
+    <div class="desde">Desde 1 Día</div>
+    <div class="img-box"><img src="https://i.postimg.cc/265myKhF/0ACF0013-5F52-42FE-84A0-959BD982D363.jpg" alt="Drip Client"></div>
+    <div class="funciones"><strong>Funciones:</strong><br>Aimkill, ESP Box, Speed, Player Teleport, Fast Swap Weapon</div>
+    <div class="btn-comprar" data-prod="prod1" data-planes="planes1">Ver Opciones</div>
+    <div class="planes" id="planes1">
+      <div class="plan"><span>1 Día</span> <strong>USD 3.50</strong><a data-amount="3.50" href="#">Comprar vía PayPal</a></div>
+      <div class="plan"><span>7 Días</span> <strong>USD 7.50</strong><a data-amount="7.50" href="#">Comprar vía PayPal</a></div>
+      <div class="plan"><span>15 Días</span> <strong>USD 15.50</strong><a data-amount="15.50" href="#">Comprar vía PayPal</a></div>
+      <div class="plan"><span>30 Días</span> <strong>USD 25.50</strong><a data-amount="25.50" href="#">Comprar vía PayPal</a></div>
+      <div class="btn-cancelar">Cerrar</div>
+      <div class="btn-extra btn-pago">📱 Ya pague</div>
+      <div class="btn-extra btn-otro">💸 Otro método de pago</div>
+    </div>
+  </div>
 
-  <!-- Producto añadido correctamente -->
+  <div class="producto" id="prod2">
+    <div class="titulo">BR Mods</div>
+    <div class="desde">Desde 1 Día</div>
+    <div class="img-box"><img src="https://i.postimg.cc/t4tH5jzt/0DE8A240-6661-4D3A-9B0A-2741BC603368.jpg" alt="BR Mods"></div>
+    <div class="funciones"><strong>Funciones:</strong><br>Aimbot, Wallhack, Speed Run, No Recoil</div>
+    <div class="btn-comprar" data-prod="prod2" data-planes="planes2">Ver Opciones</div>
+    <div class="planes" id="planes2">
+      <div class="plan"><span>1 Día</span> <strong>USD 3.50</strong><a data-amount="3.50" href="#">Comprar vía PayPal</a></div>
+      <div class="plan"><span>7 Días</span> <strong>USD 10.50</strong><a data-amount="10.50" href="#">Comprar vía PayPal</a></div>
+      <div class="plan"><span>15 Días</span> <strong>USD 15.50</strong><a data-amount="15.50" href="#">Comprar vía PayPal</a></div>
+      <div class="plan"><span>30 Días</span> <strong>USD 20.50</strong><a data-amount="20.50" href="#">Comprar vía PayPal</a></div>
+      <div class="btn-cancelar">Cerrar</div>
+      <div class="btn-extra btn-pago">📱 Ya pague</div>
+      <div class="btn-extra btn-otro">💸 Otro método de pago</div>
+    </div>
+  </div>
+
+  <div class="producto" id="prod3">
+    <div class="titulo">CUBAN MOD APK</div>
+    <div class="desde">Desde 1 Día</div>
+    <div class="img-box"><img src="https://i.postimg.cc/L4wR4v5p/0C350738-73BE-4E27-919B-0B94FC3495D5.jpg" alt="Cuban MOD"></div>
+    <div class="funciones"><strong>Funciones:</strong><br>Speed Hack, Telekill, Auto Aim, Fly Hack</div>
+    <div class="btn-comprar" data-prod="prod3" data-planes="planes3">Ver Opciones</div>
+    <div class="planes" id="planes3">
+      <div class="plan"><span>1 Día</span> <strong>USD 3.50</strong><a data-amount="3.50" href="#">Comprar vía PayPal</a></div>
+      <div class="plan"><span>7 Días</span> <strong>USD 10.50</strong><a data-amount="10.50" href="#">Comprar vía PayPal</a></div>
+      <div class="plan"><span>15 Días</span> <strong>USD 15.50</strong><a data-amount="15.50" href="#">Comprar vía PayPal</a></div>
+      <div class="plan"><span>30 Días</span> <strong>USD 25.50</strong><a data-amount="25.50" href="#">Comprar vía PayPal</a></div>
+      <div class="btn-cancelar">Cerrar</div>
+      <div class="btn-extra btn-pago">📱 Ya pague</div>
+      <div class="btn-extra btn-otro">💸 Otro método de pago</div>
+    </div>
+  </div>
+
+  <div class="producto" id="prod4">
+    <div class="titulo">HG Cheats</div>
+    <div class="desde">Desde 1 Día</div>
+    <div class="img-box"><img src="https://i.postimg.cc/zvRsRZBQ/6601600A-91F5-47F2-B228-4FA59383E8D3.jpg" alt="HG Cheats"></div>
+    <div class="funciones"><strong>Funciones:</strong><br>Auto Headshot, Radar Hack, Unlimited Ammo</div>
+    <div class="btn-comprar" data-prod="prod4" data-planes="planes4">Ver Opciones</div>
+    <div class="planes" id="planes4">
+      <div class="plan"><span>1 Día</span> <strong>USD 3.50</strong><a data-amount="3.50" href="#">Comprar vía PayPal</a></div>
+      <div class="plan"><span>7 Días</span> <strong>USD 10.50</strong><a data-amount="10.50" href="#">Comprar vía PayPal</a></div>
+      <div class="plan"><span>15 Días</span> <strong>USD 15.50</strong><a data-amount="15.50" href="#">Comprar vía PayPal</a></div>
+      <div class="plan"><span>30 Días</span> <strong>USD 25.50</strong><a data-amount="25.50" href="#">Comprar vía PayPal</a></div>
+      <div class="btn-cancelar">Cerrar</div>
+      <div class="btn-extra btn-pago">📱 Ya pague</div>
+      <div class="btn-extra btn-otro">💸 Otro método de pago</div>
+    </div>
+  </div>
+
+  <div class="producto" id="prod5">
+    <div class="titulo">FLOURITE IOS</div>
+    <div class="desde">Desde 1 Día</div>
+    <div class="img-box"><img src="https://i.postimg.cc/nct6RLh6/IMG-20251025-WA0208.jpg" alt="FLOURITE IOS"></div>
+    <div class="funciones"><strong>Funciones:</strong><br>Aimbot Head, Neck, Esp Box, Líne, Enemi, Fov, Sniper Scope, Etc.</div>
+    <div class="btn-comprar" data-prod="prod5" data-planes="planes5">Ver Opciones</div>
+    <div class="planes" id="planes5">
+      <div class="plan"><span>1 Día</span> <strong>USD 8.50</strong><a data-amount="8.50" href="#">Comprar vía PayPal</a></div>
+      <div class="plan"><span>7 Días</span> <strong>USD 15.50</strong><a data-amount="15.50" href="#">Comprar vía PayPal</a></div>
+      <div class="plan"><span>15 Días</span> <strong>USD 25.50</strong><a data-amount="25.50" href="#">Comprar vía PayPal</a></div>
+      <div class="plan"><span>30 Días</span> <strong>USD 45.50</strong><a data-amount="45.50" href="#">Comprar vía PayPal</a></div>
+      <div class="btn-cancelar">Cerrar</div>
+      <div class="btn-extra btn-pago">📱 Ya pague</div>
+      <div class="btn-extra btn-otro">💸 Otro método de pago</div>
+    </div>
+  </div>
+
   <div class="producto" id="prod6">
     <div class="titulo">Certificado De Gbox</div>
     <div class="desde">Desde 1 Año</div>
     <div class="img-box"><img src="https://i.postimg.cc/X70THvYt/IMG-20251025-WA0441.jpg" alt="Certificado De Gbox"></div>
     <div class="funciones">
-      <strong>Descripción:</strong><br>
-      Producto para que su iPhone le permita instalar apps externas, es obligatorio para usar panel IPA.
+        <strong>Descripción:</strong><br>
+        Producto para que su iphone le permita instalar apps externas, es obligatorio para usar panel ipa.
     </div>
     <div class="btn-comprar" data-prod="prod6" data-planes="planes6">Ver Opciones</div>
     <div class="planes" id="planes6">
       <div class="plan"><span>1 Año</span> <strong>USD 10.00</strong><a data-amount="10.00" href="#">Comprar vía PayPal</a></div>
       <div class="btn-cancelar">Cerrar</div>
-      <div class="btn-extra btn-pago">📱 Ya hice el pago</div>
+      <div class="btn-extra btn-pago">📱 Ya pague</div>
       <div class="btn-extra btn-otro">💸 Otro método de pago</div>
     </div>
   </div>
 
-  <footer>2024 - 2025 LUCK XIT Programador web.</footer>
+  <footer>2024 - 2025 LUCK XIT Programador web.</footer></footer>
 
   <script>
     const paypalBase = "https://www.paypal.me/Anderson2k/";
-    const whatsappNumber = "51977693275";
-
+    // Número de WhatsApp
+    const whatsappNumber = "51977693275"; 
+    
     document.querySelectorAll('.btn-comprar').forEach(btn => {
-      btn.addEventListener('click', e => {
+      btn.addEventListener('click', (e)=>{
         e.stopPropagation();
         const prodId = btn.dataset.prod;
         const planesId = btn.dataset.planes;
-        document.querySelectorAll('.producto').forEach(p => p.classList.remove('seleccionado'));
-        document.querySelectorAll('.planes').forEach(p => p.style.display = 'none');
+        document.querySelectorAll('.producto').forEach(p=>p.classList.remove('seleccionado'));
+        document.querySelectorAll('.planes').forEach(p=>p.style.display='none');
         document.getElementById(prodId).classList.add('seleccionado');
-        document.getElementById(planesId).style.display = 'block';
+        document.getElementById(planesId).style.display='block';
       });
     });
 
-    document.querySelectorAll('.btn-cancelar').forEach(btn => {
-      btn.addEventListener('click', e => {
+    document.querySelectorAll('.btn-cancelar').forEach(btn=>{
+      btn.addEventListener('click', e=>{
         e.stopPropagation();
         const planes = btn.closest('.planes');
-        planes.style.display = 'none';
+        planes.style.display='none';
         planes.parentElement.classList.remove('seleccionado');
       });
     });
 
-    document.querySelectorAll('.plan a').forEach(link => {
-      link.addEventListener('click', e => {
+    document.querySelectorAll('.plan a').forEach(link=>{
+      link.addEventListener('click', e=>{
         e.preventDefault();
+        // Obtener el monto del atributo data-amount
         const amount = link.dataset.amount;
-        if (amount) {
-          window.open(paypalBase + amount, '_blank');
+        if(amount) {
+            window.open(paypalBase+amount, '_blank');
         } else {
-          console.error("No se pudo obtener el monto para el enlace de PayPal.");
+            console.error("No se pudo obtener el monto para el enlace de PayPal.");
         }
       });
     });
 
-    document.querySelectorAll('.btn-pago').forEach(btn => {
-      btn.addEventListener('click', () => {
+    document.querySelectorAll('.btn-pago').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
         const prod = btn.closest('.producto').querySelector('.titulo').innerText;
-        window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Ya hice mi pago ' + prod + ', voy a enviar foto 📱')}`, '_blank');
+        // Se utiliza la variable `whatsappNumber`
+        window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Ya hice mi pago '+prod+', voy a enviar foto 📱')}`, '_blank');
       });
     });
 
-    document.querySelectorAll('.btn-otro').forEach(btn => {
-      btn.addEventListener('click', () => {
+    document.querySelectorAll('.btn-otro').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
         const prod = btn.closest('.producto').querySelector('.titulo').innerText;
-        window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Quiero otro método de pago ' + prod + ' 💸')}`, '_blank');
+        // Se utiliza la variable `whatsappNumber`
+        window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Quiero otro método de pago '+prod+' 💸')}`, '_blank');
       });
     });
   </script>
 
-  <!-- Fondo animado -->
   <script>
     const canvas = document.getElementById("fondo");
     const ctx = canvas.getContext("2d");
@@ -295,7 +377,7 @@
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(255, 234, 0, ${1 - dist / 100})`;
+            ctx.strokeStyle = "rgba(255, 234, 0, " + (1 - dist / 100) + ")";
             ctx.stroke();
           }
         }
